@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>City Bridge Contracting LLC — Build Your Dream Villa in Dubai</title>
+<meta name="description" content="Dubai's premium villa construction company since 2004. Scroll to see how we build your dream villa — foundation to finish."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ─────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:auto;}
+body{font-family:'Inter',system-ui,sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+:root{
+  --navy:#1B2B6B;
+  --green:#3AB54A;
+  --green-dark:#2a9438;
+  --white:#ffffff;
+  --cream:#f5f0e8;
+}
+
+/* ─────────────────────────────────────
+   NAV
+───────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:72px;
+  background:transparent;
+  transition:background .4s, border-color .4s;
+}
+#nav.scrolled{
+  background:rgba(10,10,10,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+#nav.light-nav{
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+#nav.light-nav .nav-links a{color:#333;}
+#nav.light-nav .nav-links a:hover{color:#1B2B6B;}
+#nav.light-nav .nav-cta{background:#0a0a0a;border-bottom-color:var(--green);}
+.logo-btn{display:flex;align-items:center;cursor:pointer;text-decoration:none;border:none;background:none;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{
+  color:rgba(255,255,255,.75);text-decoration:none;
+  font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+  transition:color .2s;cursor:pointer;
+}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+#nav.light-nav .nav-links a.active{color:#1B2B6B;}
+.nav-cta{
+  background:var(--green);color:#fff;border:none;
+  padding:10px 22px;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  border-radius:2px;font-family:inherit;transition:background .15s;
+  border-bottom:3px solid var(--green-dark);
+}
+.nav-cta:hover{background:var(--green-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:background .2s;}
+#nav.light-nav .hamburger span{background:#0a0a0a;}
+.mob-nav{
+  display:none;position:fixed;top:72px;left:0;right:0;z-index:999;
+  background:rgba(10,10,10,.97);backdrop-filter:blur(16px);
+  flex-direction:column;padding:20px 48px 32px;gap:0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.mob-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.mob-nav .mob-cta{margin-top:20px;background:var(--green);color:#fff;border:none;padding:14px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:inherit;}
+.mob-nav.open{display:flex;}
+
+/* ─────────────────────────────────────
+   PAGE SYSTEM
+───────────────────────────────────── */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ─────────────────────────────────────
+   ████  HOME PAGE  ████
+───────────────────────────────────── */
+
+/* ── INTRO HERO (full-screen, above scroll section) ── */
+.intro-hero{
+  height:100vh;min-height:600px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.intro-hero-bg{
+  position:absolute;inset:0;
+  background-image:url('images/hero-luxury-villa-dusk.png');
+  background-size:cover;background-position:center;
+  transform:scale(1.05);
+  animation:heroZoom 12s ease-out forwards;
+}
+@keyframes heroZoom{to{transform:scale(1);}}
+.intro-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,.4) 50%, rgba(10,10,10,.15) 100%);
+}
+.intro-hero-content{
+  position:relative;z-index:2;
+  padding:0 80px 80px;
+  max-width:900px;
+}
+.hero-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--green);}
+.intro-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,7vw,100px);
+  font-weight:400;line-height:.95;letter-spacing:-.02em;
+  color:#fff;margin-bottom:28px;
+}
+.intro-hero h1 em{font-style:italic;color:var(--green);}
+.intro-hero-sub{
+  font-size:18px;color:rgba(255,255,255,.6);
+  line-height:1.7;max-width:540px;margin-bottom:48px;
+}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.btn-fill-green{
+  background:var(--green);color:#fff;border:none;padding:16px 36px;
+  font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;border-radius:2px;font-family:inherit;
+  border-bottom:3px solid var(--green-dark);
+  display:inline-flex;align-items:center;gap:10px;transition:background .15s;
+}
+.btn-fill-green:hover{background:var(--green-dark);}
+.btn-ghost-white{
+  background:transparent;color:#fff;
+  border:1px solid rgba(255,255,255,.35);padding:16px 36px;
+  font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;border-radius:2px;font-family:inherit;
+  display:inline-flex;align-items:center;gap:10px;transition:all .2s;
+}
+.btn-ghost-white:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);}
+.scroll-hint{
+  position:absolute;bottom:32px;right:80px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.scroll-hint span{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.scroll-hint-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--green),transparent);animation:scrollPulse 2s infinite;}
+@keyframes scrollPulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── STAT BAR ── */
+.stat-bar{
+  background:rgba(255,255,255,.04);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.sbar-item{
+  padding:28px 40px;border-right:1px solid rgba(255,255,255,.06);
+  text-align:center;
+}
+.sbar-item:last-child{border-right:none;}
+.sbar-num{
+  font-family:'Playfair Display',serif;
+  font-size:42px;font-weight:700;color:var(--green);line-height:1;
+}
+.sbar-lbl{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:6px;}
+
+/* ───────────────────────────────────
+   ████  SCROLL BUILD SECTION  ████
+   (The Sereno-style sticky scroll)
+─────────────────────────────────── */
+.scroll-build{position:relative;}
+.scroll-build-sticky{
+  position:sticky;top:0;height:100vh;overflow:hidden;
+}
+.build-stage{
+  position:absolute;inset:0;
+  opacity:0;transition:opacity .6s ease;
+  pointer-events:none;
+}
+.build-stage.active{opacity:1;pointer-events:all;}
+.build-stage img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+}
+.build-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(10,10,10,.82) 0%,
+    rgba(10,10,10,.5) 50%,
+    rgba(10,10,10,.1) 100%
+  );
+}
+.build-content{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:0 80px 80px;max-width:700px;
+}
+.build-step-label{
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green);margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.build-step-label span{color:rgba(255,255,255,.3);}
+.build-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:400;line-height:1.0;letter-spacing:-.02em;
+  color:#fff;margin-bottom:18px;
+}
+.build-title em{font-style:italic;color:var(--green);}
+.build-body{
+  font-size:17px;color:rgba(255,255,255,.65);
+  line-height:1.75;max-width:480px;
+}
+/* Progress bar at bottom */
+.build-progress{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:rgba(255,255,255,.08);
+}
+.build-progress-fill{
+  height:100%;background:var(--green);
+  width:0%;transition:width .4s ease;
+}
+/* Stage dots nav */
+.build-dots{
+  position:absolute;right:48px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:10px;z-index:10;
+}
+.build-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);
+  cursor:pointer;transition:all .2s;
+}
+.build-dot.active{background:var(--green);border-color:var(--green);transform:scale(1.3);}
+/* Trigger zones (invisible, control scroll snapping) */
+.scroll-build-triggers{position:relative;}
+.scroll-trigger{height:100vh;}
+
+/* ── HORIZONTAL SCROLL SERVICES ── */
+.services-scroll-section{
+  background:#0a0a0a;padding:100px 0;overflow:hidden;
+}
+.services-scroll-header{
+  padding:0 80px;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px;
+}
+.eyebrow-green{
+  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.eyebrow-green::before{content:'';width:24px;height:1px;background:var(--green);}
+.section-title-lg{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,4vw,56px);font-weight:400;
+  letter-spacing:-.02em;line-height:1.05;color:#fff;
+}
+.section-title-lg em{font-style:italic;color:var(--green);}
+.h-scroll-track{
+  display:flex;gap:3px;padding:0 80px;
+  overflow-x:auto;scrollbar-width:none;
+  -ms-overflow-style:none;
+  scroll-snap-type:x mandatory;
+}
+.h-scroll-track::-webkit-scrollbar{display:none;}
+.svc-tile{
+  flex:0 0 380px;scroll-snap-align:start;
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.svc-tile img{
+  width:100%;height:480px;object-fit:cover;display:block;
+  transition:transform .5s ease;
+}
+.svc-tile:hover img{transform:scale(1.04);}
+.svc-tile-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,10,10,.9) 0%,rgba(10,10,10,.2) 60%,transparent 100%);
+  transition:background .3s;
+}
+.svc-tile:hover .svc-tile-overlay{background:linear-gradient(to top,rgba(10,10,10,.95) 0%,rgba(10,10,10,.4) 60%,rgba(10,10,10,.1) 100%);}
+.svc-tile-content{position:absolute;bottom:0;left:0;right:0;padding:32px;}
+.svc-tile-num{font-size:11px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:10px;}
+.svc-tile-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;color:#fff;margin-bottom:8px;line-height:1.1;}
+.svc-tile-body{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.svc-tile:hover .svc-tile-body{max-height:80px;}
+
+/* ── FULL-WIDTH PHOTO QUOTE ── */
+.photo-quote{position:relative;height:560px;overflow:hidden;display:flex;align-items:center;}
+.photo-quote img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.photo-quote-overlay{position:absolute;inset:0;background:rgba(10,10,10,.65);}
+.photo-quote-content{
+  position:relative;z-index:1;
+  max-width:900px;margin:0 auto;padding:0 80px;text-align:center;
+}
+.photo-quote blockquote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(26px,3.5vw,46px);
+  font-weight:400;font-style:italic;
+  color:#fff;line-height:1.3;letter-spacing:-.01em;margin-bottom:28px;
+}
+.photo-quote cite{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);}
+
+/* ── SPLIT ABOUT ── */
+.about-split{display:grid;grid-template-columns:1fr 1fr;}
+.about-split-img{position:relative;overflow:hidden;min-height:600px;}
+.about-split-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.about-split-text{
+  background:#fff;color:#0a0a0a;
+  padding:80px 72px;display:flex;flex-direction:column;justify-content:center;
+}
+.eyebrow-dark{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.eyebrow-dark::before{content:'';width:24px;height:1px;background:var(--green);}
+.about-split-text .sec-title{font-family:'Playfair Display',serif;font-size:clamp(34px,3.5vw,50px);font-weight:400;letter-spacing:-.02em;line-height:1.05;color:#0a0a0a;margin-bottom:20px;}
+.about-split-text .sec-title em{font-style:italic;color:var(--navy);}
+.about-split-text p{font-size:16px;color:#555;line-height:1.8;margin-bottom:18px;}
+.trust-list{margin:28px 0;}
+.trust-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid #eee;}
+.trust-item:first-child{border-top:1px solid #eee;}
+.tck{width:24px;height:24px;flex-shrink:0;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:900;margin-top:1px;}
+.trust-item h4{font-size:14px;font-weight:700;color:#0a0a0a;margin-bottom:3px;}
+.trust-item p{font-size:13px;color:#777;line-height:1.6;margin:0;}
+.btn-navy{background:var(--navy);color:#fff;border:none;padding:15px 32px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:inherit;border-bottom:3px solid var(--green);display:inline-flex;align-items:center;gap:9px;transition:background .15s;}
+.btn-navy:hover{background:#243580;}
+
+/* ── PROJECT GALLERY ── */
+.gallery-section{background:#0a0a0a;padding:100px 80px;}
+.gallery-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px;}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:320px 320px;gap:3px;}
+.g-item{position:relative;overflow:hidden;cursor:pointer;}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.g-item:hover img{transform:scale(1.06);}
+.g-item-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s;display:flex;align-items:flex-end;padding:24px;}
+.g-item:hover .g-item-overlay{background:rgba(0,0,0,.5);}
+.g-item-lbl{color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:0;transform:translateY(6px);transition:all .3s;}
+.g-item:hover .g-item-lbl{opacity:1;transform:translateY(0);}
+.g-wide{grid-column:span 2;}
+
+/* ── CTA SECTION ── */
+.cta-section{
+  position:relative;height:560px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.cta-section img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.cta-section-overlay{position:absolute;inset:0;background:rgba(10,10,10,.72);}
+.cta-section-content{position:relative;z-index:1;text-align:center;padding:0 40px;max-width:800px;}
+.cta-section-content h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,70px);font-weight:400;color:#fff;line-height:.97;letter-spacing:-.02em;margin-bottom:24px;}
+.cta-section-content h2 em{font-style:italic;color:var(--green);}
+.cta-section-content p{font-size:17px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ─────────────────────────────────────
+   ABOUT PAGE
+───────────────────────────────────── */
+.about-page-hero{
+  height:70vh;min-height:500px;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.about-page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.about-page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,.3) 70%);}
+.about-page-hero-content{position:relative;z-index:1;padding:0 80px 72px;max-width:800px;}
+.about-page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,6vw,82px);font-weight:400;color:#fff;letter-spacing:-.03em;line-height:.97;margin-top:12px;}
+.about-page-hero h1 em{font-style:italic;color:var(--green);}
+.about-num-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.06);}
+.ans-item{padding:36px 56px;border-right:1px solid rgba(255,255,255,.06);}
+.ans-item:last-child{border-right:none;}
+.ans-num{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:var(--green);line-height:1;}
+.ans-lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:6px;}
+.about-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:100px 80px;}
+.story-p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:20px;}
+.why-list{display:flex;flex-direction:column;}
+.why-row{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.why-row:first-child{border-top:1px solid rgba(255,255,255,.06);}
+.wck{width:26px;height:26px;flex-shrink:0;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:900;margin-top:2px;}
+.why-row h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:3px;}
+.why-row p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;}
+
+/* ─────────────────────────────────────
+   SERVICES PAGE
+───────────────────────────────────── */
+.svc-page-hero{
+  height:60vh;min-height:440px;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.svc-page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.svc-page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,.3) 70%);}
+.svc-page-hero-content{position:relative;z-index:1;padding:0 80px 72px;}
+.svc-page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,6vw,80px);font-weight:400;color:#fff;letter-spacing:-.03em;line-height:.97;margin-top:12px;}
+.svc-page-hero h1 em{font-style:italic;color:var(--green);}
+.svc-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px;}
+.sfc{overflow:hidden;position:relative;}
+.sfc img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .4s;}
+.sfc:hover img{transform:scale(1.04);}
+.sfc-body{padding:28px 28px 36px;background:#111;}
+.sfc-num{font-size:11px;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.sfc-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:#fff;margin-bottom:10px;}
+.sfc-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;}
+
+/* ─────────────────────────────────────
+   PROJECTS PAGE
+───────────────────────────────────── */
+.proj-page-hero{
+  height:55vh;min-height:400px;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.proj-page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.proj-page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,.35) 70%);}
+.proj-page-hero-content{position:relative;z-index:1;padding:0 80px 72px;}
+.proj-page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,6vw,80px);font-weight:400;color:#fff;letter-spacing:-.03em;line-height:.97;margin-top:12px;}
+.proj-page-hero h1 em{font-style:italic;color:var(--green);}
+.proj-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px 0;}
+.pcard{position:relative;overflow:hidden;cursor:pointer;}
+.pcard img{width:100%;height:340px;object-fit:cover;display:block;transition:transform .4s;}
+.pcard:hover img{transform:scale(1.05);}
+.pcard-info{padding:22px 24px 28px;background:#111;}
+.ptag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:8px;}
+.ptag.progress{background:rgba(58,181,74,.15);color:var(--green);}
+.ptag.done{background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);}
+.pcard h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:4px;}
+.pcard p{font-size:12px;color:rgba(255,255,255,.35);}
+
+/* ─────────────────────────────────────
+   CONTACT PAGE
+───────────────────────────────────── */
+.contact-hero{
+  height:50vh;min-height:400px;position:relative;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.contact-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.contact-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,1),rgba(10,10,10,.4) 70%);}
+.contact-hero-content{position:relative;z-index:1;padding:0 80px 72px;}
+.contact-hero h1{font-family:'Playfair Display',serif;font-size:clamp(46px,6vw,80px);font-weight:400;color:#fff;letter-spacing:-.03em;line-height:.97;margin-top:12px;}
+.contact-hero h1 em{font-style:italic;color:var(--green);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;background:#0a0a0a;}
+.cinfo-col{padding:72px 80px;border-right:1px solid rgba(255,255,255,.06);}
+.cinfo-col p.ci-intro{font-size:16px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:48px;}
+.ci-row{display:flex;align-items:flex-start;gap:16px;margin-bottom:32px;}
+.ci-icon{width:44px;height:44px;flex-shrink:0;background:rgba(58,181,74,.1);border:1px solid rgba(58,181,74,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.ci-icon svg{width:18px;height:18px;stroke:var(--green);}
+.ci-row h4{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:5px;}
+.ci-row p{font-size:15px;color:#fff;font-weight:600;}
+.ci-row a{color:#fff;text-decoration:none;font-weight:600;display:block;margin-bottom:5px;transition:color .15s;}
+.ci-row a:hover{color:var(--green);}
+.freebox{background:rgba(58,181,74,.07);border:1px solid rgba(58,181,74,.18);padding:24px;border-radius:4px;margin-top:8px;}
+.freebox-lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
+.freebox p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;}
+.cform-col{padding:72px 80px;}
+.cform-col h2{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:#fff;margin-bottom:8px;}
+.cform-col .form-sub{font-size:15px;color:rgba(255,255,255,.4);margin-bottom:36px;}
+.cform{display:flex;flex-direction:column;gap:16px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.ff{display:flex;flex-direction:column;gap:7px;}
+.ff label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.ff input,.ff textarea,.ff select{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  color:#fff;padding:13px 16px;font-size:14px;font-family:inherit;
+  outline:none;border-radius:3px;transition:border-color .15s;resize:none;
+  -webkit-appearance:none;
+}
+.ff input:focus,.ff textarea:focus,.ff select:focus{border-color:var(--green);}
+.ff select option{background:#111;color:#fff;}
+.ff textarea{height:120px;}
+.csub{
+  background:var(--green);color:#fff;border:none;
+  padding:15px 32px;font-size:13px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  border-radius:2px;border-bottom:3px solid var(--green-dark);
+  align-self:flex-start;font-family:inherit;
+  display:flex;align-items:center;gap:9px;transition:background .15s;
+}
+.csub:hover{background:var(--green-dark);}
+.form-ok{display:none;background:rgba(58,181,74,.1);border:1px solid rgba(58,181,74,.3);color:#6ee07a;padding:14px 18px;border-radius:4px;font-size:14px;font-weight:600;}
+
+/* ─────────────────────────────────────
+   FOOTER
+───────────────────────────────────── */
+footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);}
+.foot-inner{
+  max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:300px 1fr 1fr 1fr;gap:60px;
+  padding:72px 80px 56px;
+}
+.foot-brand p{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;margin-top:18px;}
+.fcol h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;}
+.fcol a{display:block;font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:10px;transition:color .15s;cursor:pointer;}
+.fcol a:hover{color:var(--green);}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.04);
+  padding:20px 80px;max-width:1400px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.foot-bottom p{font-size:12px;color:rgba(255,255,255,.2);}
+.foot-bottom span{color:var(--green);}
+.soc-links{display:flex;gap:20px;}
+.soc-links a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;}
+.soc-links a:hover{color:var(--green);}
+
+/* ─────────────────────────────────────
+   WHATSAPP FAB
+───────────────────────────────────── */
+.wa-fab{
+  position:fixed;bottom:28px;right:28px;z-index:500;
+  width:58px;height:58px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;
+  transition:transform .15s;
+}
+.wa-fab:hover{transform:scale(1.08);}
+.wa-fab svg{width:29px;height:29px;fill:#fff;}
+
+/* Arrow SVG shortcut */
+.arr{width:16px;height:16px;flex-shrink:0;}
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────── */
+@media(max-width:1024px){
+  #nav{padding:0 24px;}
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .mob-nav{padding:20px 24px 28px;}
+  .intro-hero-content,.build-content,.gallery-section,.services-scroll-header,
+  .about-page-hero-content,.svc-page-hero-content,.proj-page-hero-content,
+  .contact-hero-content,.cinfo-col,.cform-col,.about-story-grid{padding-left:40px;padding-right:40px;}
+  .about-story-grid{grid-template-columns:1fr;gap:48px;padding:64px 40px;}
+  .about-split{grid-template-columns:1fr;}
+  .about-split-img{min-height:380px;position:relative;}
+  .about-split-text{padding:56px 40px;}
+  .contact-layout{grid-template-columns:1fr;}
+  .cinfo-col{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:56px 40px;}
+  .cform-col{padding:56px 40px;}
+  .svc-full-grid,.proj-masonry{grid-template-columns:repeat(2,1fr);}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .g-wide{grid-column:span 2;}
+  .stat-bar{grid-template-columns:repeat(2,1fr);}
+  .sbar-item{padding:20px 28px;}
+  .about-num-strip{grid-template-columns:repeat(3,1fr);}
+  .ans-item{padding:28px 32px;}
+  .foot-inner{grid-template-columns:1fr 1fr;gap:40px;padding:56px 40px 40px;}
+  .foot-brand{grid-column:span 2;}
+  .foot-bottom{padding:20px 40px;}
+  .scroll-hint{right:24px;}
+  .build-dots{right:20px;}
+}
+@media(max-width:640px){
+  .intro-hero-content,.build-content{padding:0 24px 48px;}
+  .gallery-section{padding:64px 24px;}
+  .services-scroll-header{padding:0 24px;}
+  .h-scroll-track{padding:0 24px;}
+  .photo-quote-content{padding:0 24px;}
+  .about-page-hero-content,.svc-page-hero-content,.proj-page-hero-content,.contact-hero-content{padding:0 24px 56px;}
+  .about-story-grid{padding:56px 24px;}
+  .about-split-text{padding:48px 24px;}
+  .cinfo-col,.cform-col{padding:48px 24px;}
+  .svc-full-grid,.proj-masonry{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto;}
+  .g-wide{grid-column:span 1;}
+  .stat-bar{grid-template-columns:1fr 1fr;}
+  .about-num-strip{grid-template-columns:1fr;}
+  .ans-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
+  .foot-inner{grid-template-columns:1fr;padding:48px 24px 32px;}
+  .foot-brand{grid-column:span 1;}
+  .foot-bottom{padding:16px 24px;flex-direction:column;align-items:flex-start;}
+  .frow{grid-template-columns:1fr;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions button,.hero-actions .btn-fill-green,.hero-actions .btn-ghost-white{width:100%;justify-content:center;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .scroll-hint{display:none;}
+  .build-dots{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav id="nav">
+  <a class="logo-btn" onclick="showPage('home')" href="#" aria-label="City Bridge">
+    <svg height="54" viewBox="0 0 300 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="6"  width="10" height="32" fill="#1B2B6B"/>
+      <rect x="21" y="13" width="10" height="25" fill="#1B2B6B"/>
+      <rect x="12" y="19" width="10" height="19" fill="#1B2B6B"/>
+      <path d="M6 46 Q28 32 56 30" stroke="#1B2B6B" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M6 51 Q30 38 62 36" stroke="#1B2B6B" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="4"  cy="25" r="6.5" fill="#3AB54A"/>
+      <circle cx="13" cy="29" r="5"   fill="#3AB54A"/>
+      <line x1="4"  y1="32" x2="4"  y2="43" stroke="#3AB54A" stroke-width="2"/>
+      <line x1="13" y1="34" x2="13" y2="43" stroke="#3AB54A" stroke-width="2"/>
+      <text x="72" y="20" font-family="'Tajawal','Segoe UI',sans-serif" font-size="12" font-weight="800" fill="white">جسر المدينة</text>
+      <text x="72" y="38" font-family="'Inter','Segoe UI',sans-serif" font-size="16" font-weight="900" fill="white" letter-spacing="1.5">CITY BRIDGE</text>
+      <text x="72" y="50" font-family="'Inter','Segoe UI',sans-serif" font-size="10" font-weight="700" fill="white" letter-spacing=".5">Cont. L.L.C.</text>
+      <line x1="72" y1="53" x2="210" y2="53" stroke="#3AB54A" stroke-width="1.8"/>
+      <text x="218" y="52" font-family="'Inter',sans-serif" font-size="9" font-weight="600" fill="#3AB54A" letter-spacing=".5">SINCE 2004</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a onclick="showPage('home')"     href="#" class="active" id="nav-home">Home</a>
+    <a onclick="showPage('about')"    href="#" id="nav-about">About</a>
+    <a onclick="showPage('services')" href="#" id="nav-services">Services</a>
+    <a onclick="showPage('projects')" href="#" id="nav-projects">Projects</a>
+    <a onclick="showPage('contact')"  href="#" id="nav-contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="showPage('contact')">Get a free quote</button>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a onclick="showPage('home');toggleMob()"     href="#">Home</a>
+  <a onclick="showPage('about');toggleMob()"    href="#">About</a>
+  <a onclick="showPage('services');toggleMob()" href="#">Services</a>
+  <a onclick="showPage('projects');toggleMob()" href="#">Projects</a>
+  <a onclick="showPage('contact');toggleMob()"  href="#">Contact</a>
+  <button class="mob-cta" onclick="showPage('contact');toggleMob()">Get a free quote</button>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- INTRO HERO -->
+  <section class="intro-hero">
+    <div class="intro-hero-bg"></div>
+    <div class="intro-hero-overlay"></div>
+    <div class="intro-hero-content">
+      <div class="hero-eyebrow">Dubai's villa specialists since 2004</div>
+      <h1>Build Your<br>Dream Villa<br>in <em>Dubai.</em></h1>
+      <p class="intro-hero-sub">120+ premium villas built across the UAE — from foundation to finishing, delivered on time and on budget.</p>
+      <div class="hero-actions">
+        <button class="btn-fill-green" onclick="showPage('contact')">
+          Get a free quote
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-ghost-white" onclick="scrollToBuild()">Scroll to see how we build</button>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-hint-line"></div>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="sbar-item"><div class="sbar-num">120+</div><div class="sbar-lbl">Villas completed</div></div>
+    <div class="sbar-item"><div class="sbar-num">20+</div><div class="sbar-lbl">Years in UAE</div></div>
+    <div class="sbar-item"><div class="sbar-num">6</div><div class="sbar-lbl">Core services</div></div>
+    <div class="sbar-item"><div class="sbar-num">2004</div><div class="sbar-lbl">Established</div></div>
+  </div>
+
+  <!-- ████ SCROLL BUILD SEQUENCE ████ -->
+  <div id="buildSection" style="position:relative;">
+    <div style="padding:80px 80px 40px;background:#0a0a0a;">
+      <div class="eyebrow-green">How we build</div>
+      <h2 class="section-title-lg">Scroll to build<br>your <em>villa.</em></h2>
+    </div>
+    <div class="scroll-build">
+      <!-- STICKY DISPLAY PANEL -->
+      <div class="scroll-build-sticky" id="buildSticky">
+
+        <!-- Stage 0: Site Prep -->
+        <div class="build-stage active" id="stage-0">
+          <img src="images/stage-01-site-preparation.png" alt="Site preparation Dubai villa"/>
+          <div class="build-overlay"></div>
+          <div class="build-content">
+            <div class="build-step-label"><span>01 —</span> Site Preparation</div>
+            <h2 class="build-title">We clear, survey,<br>and <em>prepare</em> your land.</h2>
+            <p class="build-body">Every great villa starts with a perfectly prepared site. Our team handles soil surveys, excavation, and all groundwork — building the foundation of something extraordinary.</p>
+          </div>
+        </div>
+
+        <!-- Stage 1: Foundation -->
+        <div class="build-stage" id="stage-1">
+          <img src="images/stage-02-foundation.png" alt="Villa foundation construction Dubai"/>
+          <div class="build-overlay"></div>
+          <div class="build-content">
+            <div class="build-step-label"><span>02 —</span> Foundation & Structure</div>
+            <h2 class="build-title">Steel. Concrete.<br><em>Engineering</em> that lasts.</h2>
+            <p class="build-body">We lay reinforced concrete foundations and raise your structural frame — engineered to UAE soil conditions and Dubai Municipality codes, built to outlast generations.</p>
+          </div>
+        </div>
+
+        <!-- Stage 2: Build -->
+        <div class="build-stage" id="stage-2">
+          <img src="images/stage-03-structure.png" alt="Villa construction frame Dubai"/>
+          <div class="build-overlay"></div>
+          <div class="build-content">
+            <div class="build-step-label"><span>03 —</span> The Build</div>
+            <h2 class="build-title">Walls rise.<br>Your vision <em>takes shape.</em></h2>
+            <p class="build-body">Blockwork, roofing, MEP rough-in — our on-site supervisor manages daily progress. You get weekly photo updates and full transparency throughout.</p>
+          </div>
+        </div>
+
+        <!-- Stage 3: Fit-out -->
+        <div class="build-stage" id="stage-3">
+          <img src="images/stage-04-finishing.png" alt="Interior fit-out villa Dubai"/>
+          <div class="build-overlay"></div>
+          <div class="build-content">
+            <div class="build-step-label"><span>04 —</span> Interior Design & Fit-out</div>
+            <h2 class="build-title">Premium finishes.<br><em>Every detail</em> crafted.</h2>
+            <p class="build-body">Custom joinery, Italian marble, bespoke lighting — our fit-out team turns raw structure into a home that reflects your taste, your lifestyle, your family.</p>
+          </div>
+        </div>
+
+        <!-- Stage 4: Handover -->
+        <div class="build-stage" id="stage-4">
+          <img src="images/stage-05-handover.png" alt="Finished luxury villa Dubai handover"/>
+          <div class="build-overlay"></div>
+          <div class="build-content">
+            <div class="build-step-label"><span>05 —</span> Handover</div>
+            <h2 class="build-title">Your keys.<br>Your <em>dream home.</em></h2>
+            <p class="build-body">Final walkthrough, snag-free handover, and keys in your hand. The beginning of a relationship — we remain available for maintenance and support long after you move in.</p>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="build-progress"><div class="build-progress-fill" id="buildProgress"></div></div>
+
+        <!-- Stage dots -->
+        <div class="build-dots">
+          <div class="build-dot active"  onclick="goToStage(0)"></div>
+          <div class="build-dot"         onclick="goToStage(1)"></div>
+          <div class="build-dot"         onclick="goToStage(2)"></div>
+          <div class="build-dot"         onclick="goToStage(3)"></div>
+          <div class="build-dot"         onclick="goToStage(4)"></div>
+        </div>
+      </div><!-- /sticky -->
+
+      <!-- SCROLL TRIGGERS (invisible) -->
+      <div class="scroll-build-triggers" id="buildTriggers">
+        <div class="scroll-trigger" data-stage="0"></div>
+        <div class="scroll-trigger" data-stage="1"></div>
+        <div class="scroll-trigger" data-stage="2"></div>
+        <div class="scroll-trigger" data-stage="3"></div>
+        <div class="scroll-trigger" data-stage="4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES HORIZONTAL SCROLL -->
+  <section class="services-scroll-section">
+    <div class="services-scroll-header">
+      <div>
+        <div class="eyebrow-green">What we build</div>
+        <h2 class="section-title-lg">Our services.</h2>
+      </div>
+      <button class="btn-fill-green" onclick="showPage('services')">
+        All services
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="h-scroll-track">
+      <div class="svc-tile">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=75" alt="Turnkey villa construction"/>
+        <div class="svc-tile-overlay"></div>
+        <div class="svc-tile-content">
+          <div class="svc-tile-num">01</div>
+          <div class="svc-tile-title">Turnkey Villa Construction</div>
+          <p class="svc-tile-body">Complete build from permits to handover. One team, one contact, zero stress.</p>
+        </div>
+      </div>
+      <div class="svc-tile">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=75" alt="Interior design Dubai"/>
+        <div class="svc-tile-overlay"></div>
+        <div class="svc-tile-content">
+          <div class="svc-tile-num">02</div>
+          <div class="svc-tile-title">Interior Design & Fit-out</div>
+          <p class="svc-tile-body">Premium finishes, custom joinery, and every detail handled with precision.</p>
+        </div>
+      </div>
+      <div class="svc-tile">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&auto=format&fit=crop&q=75" alt="Renovation Dubai"/>
+        <div class="svc-tile-overlay"></div>
+        <div class="svc-tile-content">
+          <div class="svc-tile-num">03</div>
+          <div class="svc-tile-title">Renovations & Maintenance</div>
+          <p class="svc-tile-body">Upgrade your existing villa — kitchen, bathrooms, extensions, or full refurb.</p>
+        </div>
+      </div>
+      <div class="svc-tile">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&auto=format&fit=crop&q=75" alt="Architecture design Dubai"/>
+        <div class="svc-tile-overlay"></div>
+        <div class="svc-tile-content">
+          <div class="svc-tile-num">04</div>
+          <div class="svc-tile-title">Architecture & Design</div>
+          <p class="svc-tile-body">Design coordination from concept to construction-ready drawings.</p>
+        </div>
+      </div>
+      <div class="svc-tile">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop&q=75" alt="Permits Dubai municipality"/>
+        <div class="svc-tile-overlay"></div>
+        <div class="svc-tile-content">
+          <div class="svc-tile-num">05</div>
+          <div class="svc-tile-title">Permits & Municipality</div>
+          <p class="svc-tile-body">All permit applications and NOC submissions handled entirely in-house.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO QUOTE -->
+  <div class="photo-quote">
+    <img src="images/villa-front-day.png" alt="Luxury villa Dubai"/>
+    <div class="photo-quote-overlay"></div>
+    <div class="photo-quote-content">
+      <blockquote>"We don't just build houses. We build the place where your family's story begins."</blockquote>
+      <cite>City Bridge Contracting LLC — Est. 2004</cite>
+    </div>
+  </div>
+
+  <!-- ABOUT SPLIT -->
+  <section>
+    <div class="about-split">
+      <div class="about-split-img">
+        <img src="images/villa-entrance-cars.png" alt="Dubai luxury villa"/>
+      </div>
+      <div class="about-split-text">
+        <div class="eyebrow-dark">Why City Bridge</div>
+        <h2 class="sec-title">20 years.<br>120+ villas.<br><em>One standard.</em></h2>
+        <p>Since 2004, we've managed every stage of villa construction — from permits and design to build and handover — so you don't have to.</p>
+        <div class="trust-list">
+          <div class="trust-item"><div class="tck">✓</div><div><h4>Turnkey delivery</h4><p>One team handles everything — no handoffs, no confusion.</p></div></div>
+          <div class="trust-item"><div class="tck">✓</div><div><h4>On time, on budget</h4><p>Detailed planning and daily accountability to your timeline.</p></div></div>
+          <div class="trust-item"><div class="tck">✓</div><div><h4>Transparent pricing</h4><p>Detailed quotations, no hidden costs, open books.</p></div></div>
+          <div class="trust-item"><div class="tck">✓</div><div><h4>Post-handover support</h4><p>We're still here long after you move in.</p></div></div>
+        </div>
+        <button class="btn-navy" onclick="showPage('about')" style="margin-top:32px;">
+          Our story
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="gallery-section">
+    <div class="gallery-header">
+      <div>
+        <div class="eyebrow-green">Our work</div>
+        <h2 class="section-title-lg">Recent <em>projects.</em></h2>
+      </div>
+      <button class="btn-ghost-white" onclick="showPage('projects')">View all projects</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g-wide">
+        <img src="images/villa-front-day.png" alt="Luxury villa exterior"/>
+        <div class="g-item-overlay"><div class="g-item-lbl">Villa — Mirdif, Dubai</div></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&auto=format&fit=crop&q=75" alt="Interior design"/>
+        <div class="g-item-overlay"><div class="g-item-lbl">Interior — Al Warqa</div></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop&q=75" alt="Modern kitchen"/>
+        <div class="g-item-overlay"><div class="g-item-lbl">Kitchen Fit-out</div></div>
+      </div>
+      <div class="g-item">
+        <img src="images/villa-backyard-pool.png" alt="Villa pool"/>
+        <div class="g-item-overlay"><div class="g-item-lbl">Pool Villa — Al Mizhar</div></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&auto=format&fit=crop&q=75" alt="Master bedroom"/>
+        <div class="g-item-overlay"><div class="g-item-lbl">Master Suite</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <img src="images/hero-luxury-villa-dusk.png" alt="Luxury Dubai villa"/>
+    <div class="cta-section-overlay"></div>
+    <div class="cta-section-content">
+      <h2>Ready to build your<br><em>dream villa?</em></h2>
+      <p>Free consultation. Detailed quote. No obligation. Dubai's most trusted villa builder since 2004.</p>
+      <div class="cta-btns">
+        <button class="btn-fill-green btn-black-lg" onclick="showPage('contact')">
+          Get a free quote
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-ghost-white" onclick="showPage('projects')">View our projects</button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ══════════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <div class="about-page-hero">
+    <img src="images/villa-front-day.png" alt="City Bridge About"/>
+    <div class="about-page-hero-overlay"></div>
+    <div class="about-page-hero-content">
+      <div class="eyebrow-green">About us</div>
+      <h1>Built from the<br>ground <em>up.</em></h1>
+    </div>
+  </div>
+  <div class="about-num-strip">
+    <div class="ans-item"><div class="ans-num">120+</div><div class="ans-lbl">Villas built</div></div>
+    <div class="ans-item"><div class="ans-num">2004</div><div class="ans-lbl">Established</div></div>
+    <div class="ans-item"><div class="ans-num">20+</div><div class="ans-lbl">Years UAE</div></div>
+  </div>
+  <div class="about-story-grid">
+    <div>
+      <div class="eyebrow-green">Our story</div>
+      <h2 class="section-title-lg" style="font-size:clamp(34px,3.5vw,50px);margin-bottom:28px;">20 years of building<br><em>Dubai families' homes.</em></h2>
+      <p class="story-p">City Bridge Contracting LLC was founded in 2004 with a single purpose: to build premium villas in the UAE with the quality, honesty, and precision that clients deserve.</p>
+      <p class="story-p">Over two decades later, we have completed more than 120 villa projects across Dubai — each one built with the same care we brought to the very first.</p>
+      <p class="story-p" style="margin-bottom:36px;">We work closely with every client from foundation to finishing — managing design, engineering, permits, and on-site supervision so your home matches your vision, budget, and lifestyle.</p>
+      <button class="btn-fill-green" onclick="showPage('contact')">
+        Start your project
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div>
+      <div class="eyebrow-green">Why us</div>
+      <h2 class="section-title-lg" style="font-size:clamp(34px,3.5vw,50px);margin-bottom:28px;">What sets us <em>apart.</em></h2>
+      <div class="why-list">
+        <div class="why-row"><div class="wck">✓</div><div><h4>20+ years of proven experience</h4><p>Two decades and 120+ completed projects across Dubai.</p></div></div>
+        <div class="why-row"><div class="wck">✓</div><div><h4>Full transparency</h4><p>Open books, regular updates, no surprises from day one.</p></div></div>
+        <div class="why-row"><div class="wck">✓</div><div><h4>On-site supervision daily</h4><p>A dedicated site manager on your project every single day.</p></div></div>
+        <div class="why-row"><div class="wck">✓</div><div><h4>Municipality permit specialists</h4><p>In-house team handles all Dubai approvals and NOC submissions.</p></div></div>
+        <div class="why-row"><div class="wck">✓</div><div><h4>Post-handover support</h4><p>We're still available after you move in — maintenance included.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <section class="photo-quote">
+    <img src="images/villa-aerial-pool.png" alt="Construction Dubai"/>
+    <div class="photo-quote-overlay"></div>
+    <div class="photo-quote-content">
+      <blockquote>"Every villa we build is a commitment — to craftsmanship, to honesty, and to the families who trust us with their most important investment."</blockquote>
+      <cite>City Bridge Contracting LLC</cite>
+    </div>
+  </section>
+  <div style="padding:80px;background:#0a0a0a;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px;border-top:1px solid rgba(255,255,255,.05);">
+    <div>
+      <h2 class="section-title-lg" style="font-size:clamp(28px,3vw,42px);margin-bottom:8px;">Ready to start your <em>project?</em></h2>
+      <p style="color:rgba(255,255,255,.45);font-size:15px;">Free consultation. No obligation.</p>
+    </div>
+    <button class="btn-fill-green" style="padding:17px 40px;font-size:14px;" onclick="showPage('contact')">
+      Book a consultation
+      <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE: SERVICES
+══════════════════════════════════════ -->
+<div class="page" id="page-services">
+  <div class="svc-page-hero">
+    <img src="images/villa-backyard-pool.png" alt="Services"/>
+    <div class="svc-page-hero-overlay"></div>
+    <div class="svc-page-hero-content">
+      <div class="eyebrow-green">Our services</div>
+      <h1>Everything your<br>project <em>needs.</em></h1>
+    </div>
+  </div>
+  <div style="padding:56px 80px 0;background:#0a0a0a;">
+    <p style="font-size:18px;color:rgba(255,255,255,.5);line-height:1.75;max-width:600px;">One company. Full scope. From the first permit to the final coat of paint — City Bridge handles it all.</p>
+  </div>
+  <div class="svc-full-grid" style="margin:3px 0;background:#050505;">
+    <div class="sfc"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&auto=format&fit=crop&q=75" alt="Turnkey construction"/><div class="sfc-body"><div class="sfc-num">Service 01</div><div class="sfc-title">Turnkey Villa Construction</div><p class="sfc-desc">Complete build from ground-breaking to handover. All contractors, engineers, and inspections — one team, full responsibility.</p></div></div>
+    <div class="sfc"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&auto=format&fit=crop&q=75" alt="Interior design"/><div class="sfc-body"><div class="sfc-num">Service 02</div><div class="sfc-title">Architecture & Design</div><p class="sfc-desc">Design coordination with your architect or our partners — 2D/3D plans, material selection, full documentation.</p></div></div>
+    <div class="sfc"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&auto=format&fit=crop&q=75" alt="Renovation"/><div class="sfc-body"><div class="sfc-num">Service 03</div><div class="sfc-title">Renovations & Maintenance</div><p class="sfc-desc">Kitchen, bathroom, extension upgrades or full refurbishments. Annual maintenance contracts also available.</p></div></div>
+    <div class="sfc"><img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=700&auto=format&fit=crop&q=75" alt="Fit-out"/><div class="sfc-body"><div class="sfc-num">Service 04</div><div class="sfc-title">Fit-out & Finishing Works</div><p class="sfc-desc">Custom joinery, premium flooring, tiling, electrical, plumbing, and all finishing to the highest standard.</p></div></div>
+    <div class="sfc"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&auto=format&fit=crop&q=75" alt="Permits"/><div class="sfc-body"><div class="sfc-num">Service 05</div><div class="sfc-title">Permits & Municipality</div><p class="sfc-desc">All permit applications, NOC submissions, and Dubai Municipality approvals managed in-house by our specialist team.</p></div></div>
+    <div class="sfc"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=700&auto=format&fit=crop&q=75" alt="Extension"/><div class="sfc-body"><div class="sfc-num">Service 06</div><div class="sfc-title">Servant Blocks & Extensions</div><p class="sfc-desc">Purpose-built quarters, garages, or extensions designed to match your main villa's quality and finish exactly.</p></div></div>
+  </div>
+  <div style="padding:72px 80px;background:#0a0a0a;text-align:center;border-top:1px solid rgba(255,255,255,.04);">
+    <p style="font-size:17px;color:rgba(255,255,255,.4);margin-bottom:24px;">Not sure which service you need? Let's talk — free consultation.</p>
+    <button class="btn-fill-green" onclick="showPage('contact')">
+      Book a free consultation
+      <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE: PROJECTS
+══════════════════════════════════════ -->
+<div class="page" id="page-projects">
+  <div class="proj-page-hero">
+    <img src="images/villa-night-front.png" alt="Projects"/>
+    <div class="proj-page-hero-overlay"></div>
+    <div class="proj-page-hero-content">
+      <div class="eyebrow-green">Our projects</div>
+      <h1>120+ villas. Every<br>one built with <em>pride.</em></h1>
+    </div>
+  </div>
+  <div style="padding:56px 80px 0;background:#0a0a0a;">
+    <p style="font-size:17px;color:rgba(255,255,255,.45);line-height:1.75;max-width:580px;">From 4-bedroom family homes to grand 7-bedroom estates — every project built to the same exacting standard.</p>
+  </div>
+  <div class="proj-masonry" style="padding:3px 0;background:#050505;">
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&auto=format&fit=crop&q=75" alt="Villa Wadi Al Amradi"/><div class="pcard-info"><span class="ptag progress">In progress</span><h3>4BR Villa — Wadi Al Amradi</h3><p>Turnkey construction · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&auto=format&fit=crop&q=75" alt="Villa Al Warqa"/><div class="pcard-info"><span class="ptag progress">In progress</span><h3>5BR Villa — Al Warqa 3</h3><p>Turnkey construction · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=700&auto=format&fit=crop&q=75" alt="Villa Al Mizhar"/><div class="pcard-info"><span class="ptag done">Completed</span><h3>6BR Villa — Al Mizhar</h3><p>Turnkey construction · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&auto=format&fit=crop&q=75" alt="Interior Dubai"/><div class="pcard-info"><span class="ptag done">Completed</span><h3>Interior — Nad Al Sheba</h3><p>Full fit-out · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=700&auto=format&fit=crop&q=75" alt="Villa Mirdif"/><div class="pcard-info"><span class="ptag done">Completed</span><h3>7BR Villa — Mirdif</h3><p>Turnkey construction · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=700&auto=format&fit=crop&q=75" alt="Interior JVC"/><div class="pcard-info"><span class="ptag done">Completed</span><h3>Living Room — JVC</h3><p>Interior design & fit-out · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&auto=format&fit=crop&q=75" alt="Kitchen Jumeirah"/><div class="pcard-info"><span class="ptag done">Completed</span><h3>Kitchen Renovation — Jumeirah</h3><p>Kitchen fit-out · Dubai</p></div></div>
+    <div class="pcard"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=700&auto=format&fit=crop&q=75" alt="Master Suite"/><div class="pcard-info"><span class="ptag done">Completed</span><h3>Master Suite — Arabian Ranches</h3><p>Bedroom fit-out · Dubai</p></div></div>
+    <div class="pcard" style="background:#111;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 32px;cursor:pointer;" onclick="showPage('contact')">
+      <div style="font-family:'Playfair Display',serif;font-size:72px;font-weight:400;color:var(--green);line-height:1;margin-bottom:14px;">120+</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:rgba(255,255,255,.4);margin-bottom:8px;">More completed projects</h3>
+      <p style="color:rgba(255,255,255,.25);font-size:13px;margin-bottom:28px;">Ask us for the full portfolio</p>
+      <button class="btn-fill-green">
+        Contact us
+        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="contact-hero">
+    <img src="images/villa-front-day.png" alt="Contact City Bridge"/>
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-content">
+      <div class="eyebrow-green">Get in touch</div>
+      <h1>Let's build something<br><em>extraordinary.</em></h1>
+    </div>
+  </div>
+  <div class="contact-layout">
+    <div class="cinfo-col">
+      <p class="ci-intro">Whether you're planning a new villa or renovating an existing one — we'd love to hear about your project.</p>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h4>Location</h4><p><a href="https://www.google.com/maps/search/?api=1&query=City%20Bridge%20Contracting%20LLC%20Al%20Aweer%20First%20Dubai" target="_blank" rel="noopener">Al Aweer First, Dubai, United Arab Emirates</a></p></div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.13 1 .35 1.94.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.87.35 1.81.57 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+        <div><h4>Phone / WhatsApp</h4><p>
+          <a href="tel:+971552773556">+971 55 277 3556</a>
+          <a href="tel:+971503515565">+971 50 351 5565</a>
+          <a href="https://wa.me/971552773556?text=Hello%20City%20Bridge%2C%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener" style="color:var(--green);margin-top:4px;">WhatsApp us →</a>
+        </p></div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><h4>Email</h4><p><a href="mailto:citybridgellc@gmail.com">citybridgellc@gmail.com</a></p></div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+        <div><h4>Instagram</h4><p><a href="https://www.instagram.com/citybridge.ae/" target="_blank" rel="noopener">Follow us on Instagram</a></p></div>
+      </div>
+      <div class="freebox">
+        <div class="freebox-lbl">Free consultation</div>
+        <p>We offer a free initial consultation for all new villa projects. Tell us your vision — we'll walk you through what's possible.</p>
+      </div>
+    </div>
+    <div class="cform-col">
+      <h2>Request a free quote</h2>
+      <p class="form-sub">Fill in your details and we'll respond within 24 hours.</p>
+      <form class="cform" id="contactForm" action="https://formsubmit.co/citybridgellc@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New quote request from City Bridge website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="frow">
+          <div class="ff"><label>First name</label><input type="text" id="fn" name="First name" placeholder="Ahmed" required/></div>
+          <div class="ff"><label>Last name</label><input type="text" id="ln" name="Last name" placeholder="Al Mansoori"/></div>
+        </div>
+        <div class="ff"><label>Email</label><input type="email" id="em" name="email" placeholder="ahmed@example.com" required/></div>
+        <div class="ff"><label>Phone / WhatsApp</label><input type="tel" id="ph" name="Phone / WhatsApp" placeholder="+971 50 000 0000"/></div>
+        <div class="ff">
+          <label>Service needed</label>
+          <select id="sv" name="Service needed">
+            <option value="">Select a service...</option>
+            <option>Turnkey Villa Construction</option>
+            <option>Architecture and Design</option>
+            <option>Renovation and Maintenance</option>
+            <option>Fit-out and Finishing Works</option>
+            <option>Permits and Approvals</option>
+            <option>Servant Block / Extension</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="ff"><label>Project details</label><textarea id="msg" name="Project details" placeholder="Tell us about your project — location, size, timeline, budget range..."></textarea></div>
+        <button class="csub" type="submit">
+          Send request
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="form-ok" id="formOk">✓ Thank you! We'll be in touch within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <a onclick="showPage('home')" href="#" style="text-decoration:none;display:inline-block;">
+        <svg height="48" viewBox="0 0 250 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="24" y="5"  width="9" height="28" fill="#3AB54A"/>
+          <rect x="16" y="11" width="9" height="22" fill="#3AB54A"/>
+          <rect x="8"  y="16" width="9" height="17" fill="#3AB54A"/>
+          <path d="M4 38 Q22 27 46 25" stroke="rgba(255,255,255,.6)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M4 43 Q24 33 50 31" stroke="rgba(255,255,255,.3)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <circle cx="3"  cy="21" r="5.5" fill="#3AB54A"/>
+          <circle cx="10" cy="24" r="4"   fill="#3AB54A"/>
+          <text x="60" y="20" font-family="'Inter',sans-serif" font-size="13" font-weight="900" fill="white" letter-spacing="1">CITY BRIDGE</text>
+          <text x="60" y="32" font-family="'Inter',sans-serif" font-size="9"  font-weight="600" fill="rgba(255,255,255,0.35)" letter-spacing=".3">Cont. L.L.C. · Est. 2004</text>
+          <line x1="60" y1="36" x2="175" y2="36" stroke="#3AB54A" stroke-width="1.2"/>
+        </svg>
+      </a>
+      <p>Dubai's trusted villa construction and renovation specialists since 2004. 120+ premium projects across the UAE.</p>
+    </div>
+    <div class="fcol">
+      <h4>Navigation</h4>
+      <a onclick="showPage('home')"     href="#">Home</a>
+      <a onclick="showPage('about')"    href="#">About us</a>
+      <a onclick="showPage('services')" href="#">Services</a>
+      <a onclick="showPage('projects')" href="#">Projects</a>
+      <a onclick="showPage('contact')"  href="#">Contact</a>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <a onclick="showPage('services')" href="#">Villa Construction</a>
+      <a onclick="showPage('services')" href="#">Interior Design</a>
+      <a onclick="showPage('services')" href="#">Renovations</a>
+      <a onclick="showPage('services')" href="#">Fit-out & Finishing</a>
+      <a onclick="showPage('services')" href="#">Permits & NOC</a>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <a href="https://www.google.com/maps/search/?api=1&query=City%20Bridge%20Contracting%20LLC%20Al%20Aweer%20First%20Dubai" target="_blank" rel="noopener">Al Aweer First, Dubai, UAE</a>
+      <a href="tel:+971552773556">+971 55 277 3556</a>
+      <a href="tel:+971503515565">+971 50 351 5565</a>
+      <a href="mailto:citybridgellc@gmail.com">citybridgellc@gmail.com</a>
+      <a href="https://wa.me/971552773556?text=Hello%20City%20Bridge%2C%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener" style="margin-top:8px;color:var(--green);">WhatsApp us →</a>
+      <a href="https://www.instagram.com/citybridge.ae/" target="_blank" rel="noopener" style="color:var(--green);">Instagram →</a>
+    </div>
+  </div>
+  <div class="foot-bottom" style="max-width:none;padding:20px 80px;">
+    <p>© 2024 <span>City Bridge Contracting LLC</span> — All rights reserved.</p>
+    <div class="soc-links">
+      <a href="https://www.instagram.com/citybridge.ae/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/971552773556?text=Hello%20City%20Bridge%2C%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.82.736 5.463 2.023 7.754L0 32l8.463-2.01A15.938 15.938 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.333c-2.637 0-5.1-.71-7.215-1.946l-.517-.308-5.022 1.194 1.222-4.896-.337-.537A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.258-9.998c-.397-.199-2.35-1.16-2.715-1.293-.364-.133-.63-.199-.895.199-.265.397-1.029 1.293-1.261 1.558-.232.265-.465.298-.862.1-.397-.199-1.676-.617-3.192-1.971-1.18-1.052-1.976-2.35-2.208-2.748-.232-.397-.025-.612.175-.81.179-.178.397-.465.596-.697.199-.232.265-.397.397-.662.133-.265.066-.497-.033-.696-.1-.199-.895-2.157-1.227-2.953-.323-.775-.65-.67-.895-.682l-.762-.013c-.265 0-.696.1-1.06.497-.364.397-1.393 1.36-1.393 3.317s1.426 3.847 1.625 4.112c.199.265 2.807 4.284 6.802 6.007.951.41 1.693.655 2.271.838.954.303 1.823.26 2.51.158.765-.114 2.35-.961 2.682-1.888.33-.927.33-1.722.232-1.888-.1-.166-.364-.265-.762-.464z"/></svg>
+</a>
+
+<script>
+/* ── PAGE ROUTING ── */
+function showPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const pg=document.getElementById('page-'+n);
+  const nl=document.getElementById('nav-'+n);
+  if(pg)pg.classList.add('active');
+  if(nl)nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+  currentStage=0;
+  updateStage(0);
+}
+
+/* ── MOBILE MENU ── */
+function toggleMob(){document.getElementById('mobNav').classList.toggle('open');}
+
+/* ── NAV SCROLL EFFECT ── */
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('nav');
+  if(window.scrollY>60){nav.classList.add('scrolled');}
+  else{nav.classList.remove('scrolled');}
+  handleBuildScroll();
+});
+
+/* ── SCROLL BUILD SEQUENCE ── */
+const TOTAL_STAGES=5;
+let currentStage=0;
+
+function scrollToBuild(){
+  const el=document.getElementById('buildSection');
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+function updateStage(n){
+  // Clamp
+  n=Math.max(0,Math.min(TOTAL_STAGES-1,n));
+  currentStage=n;
+  // Update stages
+  document.querySelectorAll('.build-stage').forEach((s,i)=>{
+    s.classList.toggle('active',i===n);
+  });
+  // Update dots
+  document.querySelectorAll('.build-dot').forEach((d,i)=>{
+    d.classList.toggle('active',i===n);
+  });
+  // Update progress bar
+  const pct=((n)/(TOTAL_STAGES-1))*100;
+  const bar=document.getElementById('buildProgress');
+  if(bar)bar.style.width=pct+'%';
+}
+
+function goToStage(n){updateStage(n);}
+
+function handleBuildScroll(){
+  const triggers=document.getElementById('buildTriggers');
+  if(!triggers)return;
+  const items=triggers.querySelectorAll('.scroll-trigger');
+  items.forEach((item,i)=>{
+    const rect=item.getBoundingClientRect();
+    // When trigger's top is above 60% of viewport
+    if(rect.top<window.innerHeight*0.6 && rect.bottom>0){
+      if(currentStage!==i)updateStage(i);
+    }
+  });
+}
+
+/* ── FORM SUBMIT ── */
+function submitForm(){
+  const fn=document.getElementById('fn').value.trim();
+  const em=document.getElementById('em').value.trim();
+  if(!fn||!em){alert('Please fill in your name and email.');return;}
+  document.getElementById('formOk').style.display='block';
+  ['fn','ln','em','ph','sv','msg'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  setTimeout(()=>{document.getElementById('formOk').style.display='none';},7000);
+}
+
+/* ── PREVENT ANCHOR HASH ── */
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+</body>
+</html>
